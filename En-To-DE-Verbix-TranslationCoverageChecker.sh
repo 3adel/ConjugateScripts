@@ -4,23 +4,23 @@
 BASE="http://api.verbix.com/translatorv2/json/eba16c29-e22e-11e5-be88-00089be4dcbc/en/de/"
 CURLARGS="-f -s -k -L"
 TEMP="eat\n"
-NAMES=`cat topEnglishVerbs.txt` #names from names.txt file
+VERBS=`cat topEnglishVerbs.txt` #names from names.txt file
 COUNTER=0
 
-for NAME in $NAMES; do {
-   #curl $CURLARGS $BASE$NAME   >> ./results.csv
-   #echo "Checking verb $NAME via URL: $BASE$NAME"
+for VERB in $VERBS; do {
+   #curl $CURLARGS $BASE$VERB   >> ./results.csv
+   #echo "Checking verb $VERB via URL: $BASE$VERB"
    
-   REQUEST=$(curl $CURLARGS $BASE$NAME)
+   REQUEST=$(curl $CURLARGS $BASE$VERB)
    COUNTER=$[$COUNTER +1]   
     
    
    if [ $REQUEST = "[]" ]; then
-        echo "$NAME" >> ./results.csv
-        echo "$COUNTER: $NAME NOT FOUND"
+        echo "$VERB" >> ./results.csv
+        echo "$COUNTER: $VERB NOT FOUND"
 
    else 
-        echo "$COUNTER: $NAME FOUND"
+        echo "$COUNTER: $VERB FOUND"
    fi   
 }
 done
