@@ -1,5 +1,5 @@
 #!/bin/bash
-#This simple script checks what en->de translations are available from verbix and saves missing verbs in a seperate files. I researched the top 1000 verbs in english and ran the script against them. The result can be found in the file results.csv
+#This simple script checks what en->de translations are available from verbix and saves missing verbs in a seperate file. I researched the top 1000 verbs in english and ran the script against them. The result can be found in the file results.csv
 
 BASE="http://api.verbix.com/translatorv2/json/35b1e140-257a-11e6-be88-00089be4dcbc/en/de/"
 CURLARGS="-f -s -k -L"
